@@ -9,9 +9,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
+                <th>Titre</th>
                 <th>Description</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,11 +23,12 @@
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}" type="button" class="btn btn-success">Voir</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}" type="button" class="btn btn-warning">Modifier</a>
+                    {{ include('article/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Il n'y a pas d'articles ici...</td>
             </tr>
         {% endfor %}
         </tbody>
